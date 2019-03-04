@@ -1,4 +1,4 @@
-# JAVA-Spring-Pratices
+# JAVA-Spring-Practices
 
 
 Projects practiced for JAVA Spring boot.
