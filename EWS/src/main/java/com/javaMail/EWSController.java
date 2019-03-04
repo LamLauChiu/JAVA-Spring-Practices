@@ -57,9 +57,9 @@ public class EWSController {
 						
 			SearchFilterCollection searchFilterCollection = new SearchFilterCollection(LogicalOperator.And);
 			
-			//new SearchFilter.ContainsSubstring(ItemSchema.Subject,"This is the test for downloading CMS mail attachment") ),view);
+			//new SearchFilter.ContainsSubstring(ItemSchema.Subject,"This is the test for downloading mail attachment") ),view);
 			
-			//searchFilterCollection.add(new SearchFilter.ContainsSubstring(EmailMessageSchema.Subject, "This is the test for downloading CMS mail attachment"));
+			//searchFilterCollection.add(new SearchFilter.ContainsSubstring(EmailMessageSchema.Subject, "This is the test for downloading mail attachment"));
 			
 		
 			
@@ -71,9 +71,9 @@ public class EWSController {
 			searchFilterCollection.add(new SearchFilter.IsGreaterThan(ItemSchema.DateTimeReceived,dateFrom));
 			searchFilterCollection.add(new SearchFilter.IsLessThan(ItemSchema.DateTimeReceived,dateTo));
 			
-			searchFilterCollection.add(new SearchFilter.ContainsSubstring(ItemSchema.Subject, "This is the test for downloading CMS mail attachment"));
+			searchFilterCollection.add(new SearchFilter.ContainsSubstring(ItemSchema.Subject, "This is the test for downloading mail attachment"));
 			searchFilterCollection.add(new SearchFilter.IsEqualTo( ItemSchema.HasAttachments, true));
-			//FindItemsResults<Item> findResults = service.findItems(WellKnownFolderName.Inbox, new SearchFilter.SearchFilterCollection( LogicalOperator.Or ,new SearchFilter.ContainsSubstring(ItemSchema.Subject,"This is the test for downloading CMS mail attachment") ),view);
+			//FindItemsResults<Item> findResults = service.findItems(WellKnownFolderName.Inbox, new SearchFilter.SearchFilterCollection( LogicalOperator.Or ,new SearchFilter.ContainsSubstring(ItemSchema.Subject,"This is the test for downloading mail attachment") ),view);
 			
 			
 			
