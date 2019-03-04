@@ -32,11 +32,7 @@ public class ScheduledTasks {
         log.info("The time is now {}", dateFormat.format(new Date()));
         
         SearchFilterCollection searchFilterCollection = new SearchFilterCollection(LogicalOperator.And);
-		
-		//new SearchFilter.ContainsSubstring(ItemSchema.Subject,"This is the test for downloading mail attachment") ),view);
-		
-		//searchFilterCollection.add(new SearchFilter.ContainsSubstring(EmailMessageSchema.Subject, "This is the test for downloading mail attachment"));
-		
+
 	
 		
 		Date dateTo = new Date();
@@ -49,10 +45,7 @@ public class ScheduledTasks {
 		
 		searchFilterCollection.add(new SearchFilter.ContainsSubstring(ItemSchema.Subject, "This is the test for downloading mail attachment"));
 		searchFilterCollection.add(new SearchFilter.IsEqualTo( ItemSchema.HasAttachments, true));
-		//FindItemsResults<Item> findResults = service.findItems(WellKnownFolderName.Inbox, new SearchFilter.SearchFilterCollection( LogicalOperator.Or ,new SearchFilter.ContainsSubstring(ItemSchema.Subject,"This is the test for downloading mail attachment") ),view);
-		
-		
-		
+
 		List<EmailMessage> emailMessages = ewsService.readMessagesWithSerachFilterCollection(searchFilterCollection);
 		
 		

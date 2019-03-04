@@ -57,12 +57,6 @@ public class EWSController {
 						
 			SearchFilterCollection searchFilterCollection = new SearchFilterCollection(LogicalOperator.And);
 			
-			//new SearchFilter.ContainsSubstring(ItemSchema.Subject,"This is the test for downloading mail attachment") ),view);
-			
-			//searchFilterCollection.add(new SearchFilter.ContainsSubstring(EmailMessageSchema.Subject, "This is the test for downloading mail attachment"));
-			
-		
-			
 			Date dateTo = new Date();
 			Date dateFrom = DateTimeHelper.addDays(dateTo, -3);
 			System.out.println("dateFrom: "+ dateFrom);
@@ -73,16 +67,10 @@ public class EWSController {
 			
 			searchFilterCollection.add(new SearchFilter.ContainsSubstring(ItemSchema.Subject, "This is the test for downloading mail attachment"));
 			searchFilterCollection.add(new SearchFilter.IsEqualTo( ItemSchema.HasAttachments, true));
-			//FindItemsResults<Item> findResults = service.findItems(WellKnownFolderName.Inbox, new SearchFilter.SearchFilterCollection( LogicalOperator.Or ,new SearchFilter.ContainsSubstring(ItemSchema.Subject,"This is the test for downloading mail attachment") ),view);
-			
-			
-			
+
 			List<EmailMessage> emailMessages = ewsService.readMessagesWithSerachFilterCollection(searchFilterCollection);
 			
-			
-			//ewsService.downloadAttachmentFromListOfMessages(emailMessages, "CubeTestReport");
-			
-			
+		
 			for( EmailMessage emailMessage : emailMessages) {
 				
 				ewsService.downloadAttachmentFromEmailMessage(emailMessage, "CubeTestReport");

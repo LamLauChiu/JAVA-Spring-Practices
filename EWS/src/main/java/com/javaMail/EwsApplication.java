@@ -17,7 +17,7 @@ public class EwsApplication {
 		
 		try {
 			EWSService ewsSerivce = new EWSService();
-			//ewsSerivce.getEmailFolderIdByName("CubeTestReport");
+			
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
